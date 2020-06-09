@@ -5,7 +5,7 @@ export default function( props )
 {
   return(
     <div
-      onClick = { () => props.toggle( props.todo.id ) }
+      onClick = { () => props.dispatch( { type : "TOGGLE", payload : props.todo.id } ) }
       className = { props.todo.completed ? "toggle" : ""  } >
       <p>{ props.todo.task }</p>
     </div>

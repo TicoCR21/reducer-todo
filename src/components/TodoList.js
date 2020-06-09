@@ -5,7 +5,7 @@ export default function( props )
 {
   return(
     <div>
-      { props.todoList.map( todo => <Todo key = { todo.id } todo = { todo } toggle = { props.toggle } />) }
+      { props.todoList.map( todo => <Todo key = { todo.id } todo = { todo } dispatch = { props.dispatch } />) }
     </div>
   );
 }

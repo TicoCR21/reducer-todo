@@ -13,7 +13,7 @@ export default function( props )
   const onAdd = e =>
   {
     e.preventDefault();
-    props.addTask( task.task );
+    props.dispatch( { type : "ADD", payload : task.task } );
     setTask( { task : "" } );
   }
 
@@ -24,7 +24,7 @@ export default function( props )
       <button onClick = { onAdd }>
         Add Todo
       </button>
-      <button onClick = { props.clearTasks }>
+      <button onClick = { e => { e.preventDefault(); props.dispatch( { type : "CLEAR" } ) } }>
         Clear Completed
       </button>
     </div>
